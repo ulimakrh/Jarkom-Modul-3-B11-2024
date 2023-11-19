@@ -6,16 +6,16 @@ apt-get install nginx php7.3 php7.3-fpm wget zip htop -y
 echo '
 geo $allowed {
     default     0;
-    10.49.3.69  1;
-    10.49.3.70  1;
-    10.49.4.167 1;
-    10.49.4.168 1;
+    10.14.3.69  1;
+    10.14.3.70  1;
+    10.14.4.167 1;
+    10.14.4.168 1;
 }
 
 
 server {
     listen 80;
-    server_name granz.channel.e25.com www.granz.channel.e25.com;
+    server_name granz.channel.b11.com www.granz.channel.b11.com;
 
     
 
@@ -26,7 +26,7 @@ server {
     location / {
         proxy_set_header Host $host;
         if ($allowed) {
-            proxy_pass http://10.49.2.2; #IP Eisen
+            proxy_pass http://10.14.2.2; #IP Eisen
         }
         proxy_pass http://127.0.0.1:8000;
     }
